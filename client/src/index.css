@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-filter {
+    @apply rounded-full px-4 py-1.5 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500;
+  }
+}
+
+/* ─── Animations ──────────────────────────────────────────────────────────── */
+
+/**
+ * Badge pop animation — plays once when the badge count changes.
+ * Used on the cart icon badge in the header.
+ */
+@keyframes badge-pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.35);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-badge-pop {
+  animation: badge-pop 0.35s ease-in-out;
+}
+
+/**
+ * Slide-in animation for the cart sidebar overlay.
+ * Tailwind's built-in transition classes handle the panel itself.
+ */
+
+/**
+ * "Added to cart" flash on the product card button.
+ * Handled via conditional Tailwind classes in ProductCard.tsx.
+ */

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 echo "--- Installing server dependencies ---"
-npm install
+npm install --include=dev
 echo "--- Building server ---"
 npm run build
 echo "--- Installing client dependencies ---"

@@ -1,0 +1,18 @@
+# =============================================================================
+# Render Blueprint — Infrastructure as Code
+# =============================================================================
+
+services:
+  - type: web
+    name: shop-store-api
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: bash build.sh
+    startCommand: node server/dist/index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CORS_ORIGIN
+        value: "*"

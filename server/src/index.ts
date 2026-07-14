@@ -4,6 +4,7 @@
 
 import express, { Express } from 'express';
 import cors from 'cors';
+import path from 'path';
 import productRoutes from './routes/products';
 import cartRoutes from './routes/cart';
 import { globalErrorHandler } from './middleware/errorHandler';
@@ -37,6 +38,15 @@ app.get('/api/health', (_req, res) => {
 
 app.use('/api/products', productRoutes);
 app.use('/api/cart', cartRoutes);
+
+// ─── Serve built frontend in production ─────────────────────────────────────
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../../client/dist')));
+  app.get('*', (_req, res) => {
+    res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
+  });
+}
 
 // ─── 404 Handler ────────────────────────────────────────────────────────────
 // Catch-all for undefined routes.

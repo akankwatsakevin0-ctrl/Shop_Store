@@ -32,6 +32,31 @@ A full-stack e-commerce platform with a RESTful product catalog, shopping cart, 
 
 ---
 
+## Project Structure
+
+```
+├── server/                  # Express + TypeScript backend
+│   └── src/
+│       ├── index.ts         # Entry point, Express app setup
+│       ├── types.ts         # Shared TypeScript interfaces
+│       ├── data/products.ts # In-memory product seed data (15 items)
+│       ├── routes/          # Product and cart route handlers
+│       └── middleware/      # Global error handler
+├── client/                  # React + Vite + Tailwind frontend
+│   └── src/
+│       ├── App.tsx          # Root component with layout
+│       ├── api/             # API client functions
+│       ├── components/      # React UI components
+│       ├── context/         # Cart context + provider
+│       └── types/           # Frontend type definitions
+├── render.yaml              # Render deployment config
+├── tsconfig.json            # Backend TypeScript config
+├── build.sh                 # Render build script
+└── package.json             # Root workspace scripts
+```
+
+---
+
 ## Tech Stack
 
 | Layer | Technology |
@@ -97,6 +122,30 @@ cd client && npm run dev
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/api/health` | Server health check |
+
+---
+
+## Environment Variables
+
+The server supports the following environment variables. Create a `.env` file in the project root:
+
+| Variable | Required | Default | Description |
+|----------|----------|---------|-------------|
+| `PORT` | — | `3001` | Server listen port |
+| `CORS_ORIGIN` | — | `*` | Allowed CORS origin (set to your domain in production) |
+| `NODE_ENV` | — | `development` | Environment mode (`production` enables static frontend serving) |
+
+---
+
+## Testing
+
+All features have been manually tested end-to-end:
+- Product listing, filtering, and search
+- Add to cart with stock validation
+- Quantity controls with real-time total updates
+- Cart persistence across page reloads
+- Complete checkout flow: form → processing → success
+- Empty cart state and clear cart functionality
 
 ---
 

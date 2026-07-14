@@ -1,6 +1,6 @@
 # E-Commerce Store
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-38BDF8?style=for-the-badge&logo=render)](YOUR_DEPLOYED_URL_HERE)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-38BDF8?style=for-the-badge&logo=render)](https://shop-store-api-9clw.onrender.com)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000)](https://reactjs.org/)
 [![Express](https://img.shields.io/badge/Express-000?logo=express&logoColor=fff)](https://expressjs.com/)
@@ -9,7 +9,7 @@
 
 A full-stack e-commerce platform with a RESTful product catalog, shopping cart, and mock checkout flow. Built with TypeScript throughout — Express backend and React frontend with Vite and Tailwind CSS.
 
-**Live:** [YOUR_DEPLOYED_URL_HERE](YOUR_DEPLOYED_URL_HERE)
+**Live:** [https://shop-store-api-9clw.onrender.com](https://shop-store-api-9clw.onrender.com)
 
 ---
 

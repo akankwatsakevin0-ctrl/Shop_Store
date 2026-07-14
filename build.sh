@@ -5,7 +5,7 @@ npm install --include=dev
 echo "--- Building server ---"
 npm run build
 echo "--- Installing client dependencies ---"
-cd client && npm install && cd ..
+cd client && npm install --include=dev && cd ..
 echo "--- Building client ---"
 cd client && npm run build && cd ..
 echo "--- Build complete ---"
